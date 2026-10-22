@@ -13,8 +13,6 @@ entity memoria is
 end memoria;
 
 architecture comportamento of memoria is
-       
-    -- 1) declara os 3 componentes: decodificador, Registrador_8bits, mux16x1
 
     component decodificador
         port(
@@ -47,10 +45,10 @@ architecture comportamento of memoria is
 
 begin
 
-        -- 2) decodificador: addr entra, sel sai
+        -- Decodificador: addr entra, sel sai
     DEC: decodificador port map (addr => addr, sel => sel);
 
-    -- 3) as 16 gavetas
+    -- as 16 gavetas
     GERA_GAVETAS: for i in 0 to 15 generate
         we(i) <= sel(i) and enable;          
 
@@ -63,7 +61,7 @@ begin
         );
     end generate;
 
-    -- 4) mux: as 16 gavetas entram, a escolhida sai em D_out
+    -- mux: as 16 gavetas entram, a escolhida sai em D_out
     MUX: mux16x1 port map (
         e0 => gavetas(0), e1 => gavetas(1), e2 => gavetas(2), e3 => gavetas(3),
         e4 => gavetas(4), e5 => gavetas(5), e6 => gavetas(6), e7 => gavetas(7),
