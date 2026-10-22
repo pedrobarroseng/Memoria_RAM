@@ -31,4 +31,15 @@ begin
             );
     end generate gera_FF;   
 
+-- Equivalente ao generate acima, escrito FF por FF:
+    --FF0: ffd port map (d => d(0), clk => clk, enable => enable, clear => clear, q => q(0));
+    --FF1: ffd port map (d => d(1), clk => clk, enable => enable, clear => clear, q => q(1));
+    --FF2: ffd port map (d => d(2), clk => clk, enable => enable, clear => clear, q => q(2));
+    --FF3: ffd port map (d => d(3), clk => clk, enable => enable, clear => clear, q => q(3));
+    --FF4: ffd port map (d => d(4), clk => clk, enable => enable, clear => clear, q => q(4));
+    --FF5: ffd port map (d => d(5), clk => clk, enable => enable, clear => clear, q => q(5));
+    --FF6: ffd port map (d => d(6), clk => clk, enable => enable, clear => clear, q => q(6));
+    --FF7: ffd port map (d => d(7), clk => clk, enable => enable, clear => clear, q => q(7));
+
+
 end architecture estrutura;
